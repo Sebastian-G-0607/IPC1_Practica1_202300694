@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view;
 
 import javax.swing.table.DefaultTableModel;
@@ -137,6 +133,7 @@ public class EstacionDeCarga extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new EstacionDeCarga().setVisible(true);
+                System.out.println(table_products.getRowCount());
             }
         });
     }
@@ -147,6 +144,6 @@ public class EstacionDeCarga extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     public javax.swing.JLabel label_title;
-    public javax.swing.JTable table_products;
+    public static javax.swing.JTable table_products;
     // End of variables declaration//GEN-END:variables
 }
