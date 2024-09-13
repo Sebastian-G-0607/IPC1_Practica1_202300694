@@ -8,7 +8,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class EstacionDeCarga extends javax.swing.JFrame {
 
-    DefaultTableModel dtm_product;
+    public DefaultTableModel dtm_product;
     
     /** Creates new form EstacionDeCarga */
     public EstacionDeCarga() {
@@ -133,7 +133,6 @@ public class EstacionDeCarga extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new EstacionDeCarga().setVisible(true);
-                System.out.println(table_products.getRowCount());
             }
         });
     }
@@ -144,6 +143,6 @@ public class EstacionDeCarga extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     public javax.swing.JLabel label_title;
-    public static javax.swing.JTable table_products;
+    public javax.swing.JTable table_products;
     // End of variables declaration//GEN-END:variables
 }

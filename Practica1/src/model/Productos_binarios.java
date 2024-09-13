@@ -11,9 +11,9 @@ import javax.swing.JOptionPane;
 
  @author sebas
  */
-public class Cargar_productos {
+public class Productos_binarios {
     
-    public static void escribir_muestrabin(){
+    public static void escribir_productosBinario(){
         
         String nombreArchivo = "productos.bin"; //Nombre del archivo
         File archivo = new File(nombreArchivo); //Se crea un objeto de tipo archivo con el nombre del string definido arriba

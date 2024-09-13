@@ -36,16 +36,20 @@ public class Cargar_productosCSV {
         BufferedReader br;
         
         try {
-            br = new BufferedReader(new FileReader(ruta));
+            br = new BufferedReader(new FileReader(getRuta()));
             Producto producto_temporal; //Se crea un producto temporal que almacena los datos de cada fila
             while((linea = br.readLine()) != null){
                 if(contador > 0){
                     producto_temporal =  new Producto();
                     partes = linea.split(",");
                 
-                    //Eliminando espacios
+                    //Eliminando espacios y convirtiendo a minusculas las propiedades
                     for(int i=0; i<partes.length; i++){
                         partes[i] = partes[i].trim();
+//                        if(i == 2 || i == 3){
+//                            partes[i] = partes[i].toLowerCase();
+//                        }
+                        
                     }
                     
                     producto_temporal.setCodigo(partes[0]);
@@ -62,5 +66,11 @@ public class Cargar_productosCSV {
         }
         
     }
+
+    public String getRuta() {
+        return ruta;
+    }
+    
+    
     
 }
