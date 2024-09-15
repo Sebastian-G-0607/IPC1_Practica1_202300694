@@ -11,6 +11,7 @@ import controller.Cargar_productos;
  */
 public class Main {
     public static void main(String[] args) {
+        System.out.println("hh");
         EstacionDeCarga view = new EstacionDeCarga();
         Cargar_productos cargar = new Cargar_productos(view);
         view.setVisible(true);

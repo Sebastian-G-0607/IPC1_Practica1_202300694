@@ -46,10 +46,6 @@ public class Cargar_productosCSV {
                     //Eliminando espacios y convirtiendo a minusculas las propiedades
                     for(int i=0; i<partes.length; i++){
                         partes[i] = partes[i].trim();
-//                        if(i == 2 || i == 3){
-//                            partes[i] = partes[i].toLowerCase();
-//                        }
-                        
                     }
                     
                     producto_temporal.setCodigo(partes[0]);

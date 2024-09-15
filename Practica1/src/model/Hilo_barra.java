@@ -1,5 +1,6 @@
 package model;
 
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JProgressBar;
 import javax.swing.SwingUtilities;
@@ -14,75 +15,96 @@ public class Hilo_barra extends Thread{
     private JProgressBar barra;
     private int tiempo;
     private double progress;
+    private JLabel label;
     
-    public Hilo_barra(){
+    public Hilo_barra(){   
+        
     }
     
     //Constructor para los hilos de material y color
-    public Hilo_barra(JProgressBar barra, String descripcion){
-
+    public Hilo_barra(JProgressBar barra, String descripcion, JLabel label){
+        
+        this.barra = barra;
+        this.label = label;
+        
         //Validando el material del producto
         if(descripcion.equals("metal")){
-            tiempo = 15;
+            this.tiempo = 15;
         }
         else if(descripcion.equals("madera")){
-            tiempo = 25;
+            this.tiempo = 25;
         }
         else if(descripcion.equals("vidrio")){
-            tiempo = 10;
+            this.tiempo = 10;
         } 
         else if(descripcion.equals("nylon")){
-            tiempo = 20;
+            this.tiempo = 20;
         } 
         else if(descripcion.equals("hule")){
-            tiempo = 10;
+            this.tiempo = 10;
         } 
         else if(descripcion.equals("poliester")){
-            tiempo = 5;
+            this.tiempo = 5;
         } 
         
         //Validando el color
-        if(descripcion.equals("verde")){
-            tiempo = 15;
+        else if(descripcion.equals("verde")){
+            this.tiempo = 15;
         }
         else if(descripcion.equals("negro")){
-            tiempo = 25;
+            this.tiempo = 25;
         }
         else if(descripcion.equals("na")){
-            tiempo = 0;
+            this.tiempo = 0;
         }
         else if(descripcion.equals("azul")){
-            tiempo = 20;
+            this.tiempo = 20;
         }
         else if(descripcion.equals("rojo")){
-            tiempo = 10;
+            this.tiempo = 10;
         }
         else if(descripcion.equals("amarillo")){
-            tiempo = 5;
+            this.tiempo = 5;
         }
     }
        
     //Constructor para los hilos de empaquetado
-    public Hilo_barra(JProgressBar barra){
+    public Hilo_barra(JProgressBar barra, JLabel label){
         this.barra = barra;
         this.tiempo = 10;
+        this.label = label;
     }
     
     @Override
     public void run(){
         
+        double aumento;
+        
         int segundos = 0;
-        double aumento = 100/getTiempo();
+        if(this.tiempo != 0){
+            aumento = 100/this.tiempo;
+        } else{
+            aumento = 100;
+        }
         
         while(band){
             try {
                 segundos++;
                 progress += aumento;
-                if(segundos >= getTiempo() || progress >= 100){
+                if(segundos >= this.tiempo || progress >= 100){
                     band = false;
                 }
-                SwingUtilities.invokeLater(() -> barra.setValue((int) progress));
-                Hilo_barra.sleep(1000);
+                if(segundos == this.tiempo){
+                   SwingUtilities.invokeLater(() -> barra.setValue(100)); 
+                    getLabel().setText("100");
+                }
+                else{
+                  SwingUtilities.invokeLater(() -> barra.setValue((int) progress));  
+                    getLabel().setText(String.valueOf(progress));
+                }
+                if(aumento != 100){
+                    Hilo_barra.sleep(1000);
+                }
             } catch (InterruptedException e) {
                 JOptionPane.showMessageDialog(null, e);
             }
@@ -91,6 +113,10 @@ public class Hilo_barra extends Thread{
 
     public int getTiempo() {
         return tiempo;
+    }
+
+    public JLabel getLabel() {
+        return label;
     }
     
     

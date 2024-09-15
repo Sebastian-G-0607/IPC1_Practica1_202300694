@@ -24,26 +24,55 @@ public class Hilo_contador extends Thread{
     
     @Override
     public void run(){
+        try {
+            Hilo_contador.sleep(1000);
+        } catch (InterruptedException e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
         int total = 0;
         int segundos = 0;
         int minutos = 0;
-        while(total < tiempo){
-            try { 
-                
+        while(total < getTiempo()){
+            try {      
                 total++;
                 segundos++;
-                if(total>59){
+                if(segundos>59){
                     minutos++;
-                    label_min.setText(String.valueOf(minutos));
+                    
+                    if(minutos < 10 && minutos != 0){
+                        label_min.setText("0" + String.valueOf(minutos));
+                    }
+                    else{
+                        label_min.setText(String.valueOf(minutos));   
+                    }
+                    
                     segundos = 0;
                 }
-                
-                label_sec.setText(String.valueOf(segundos));
+                if(segundos == 0){
+                    label_sec.setText(String.valueOf(segundos) + "0");
+                }
+                else if(segundos < 10 && segundos != 0){
+                    label_sec.setText("0" + String.valueOf(segundos));
+                }
+                else{
+                    label_sec.setText(String.valueOf(segundos));   
+                }
                 Hilo_contador.sleep(1000);
                 
             } catch (InterruptedException ex) {
                 JOptionPane.showMessageDialog(null,ex);
             }
         }
+        try {
+            Hilo_contador.sleep(5000);
+            this.tiempo += 5;
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hilo_contador.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
+
+    public int getTiempo() {
+        return tiempo;
+    }
+    
 }

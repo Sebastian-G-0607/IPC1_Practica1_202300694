@@ -1,5 +1,6 @@
 package view;
 
+import model.Hilo_barra;
 /**
 
  @author sebas
@@ -243,24 +244,24 @@ public class EstacionDeTrabajo extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JProgressBar jProgressBar1;
-    private javax.swing.JProgressBar jProgressBar2;
-    private javax.swing.JProgressBar jProgressBar3;
+    public javax.swing.JProgressBar jProgressBar1;
+    public javax.swing.JProgressBar jProgressBar2;
+    public javax.swing.JProgressBar jProgressBar3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel label_1;
-    private javax.swing.JLabel label_2;
-    private javax.swing.JLabel label_3;
-    private javax.swing.JLabel label_contador;
+    public javax.swing.JLabel label_1;
+    public javax.swing.JLabel label_2;
+    public javax.swing.JLabel label_3;
+    public javax.swing.JLabel label_contador;
     private javax.swing.JLabel label_diagonal;
     private javax.swing.JLabel label_dosp;
     private javax.swing.JLabel label_empaque;
     private javax.swing.JLabel label_ensamblaje;
-    private javax.swing.JLabel label_min;
+    public javax.swing.JLabel label_min;
     private javax.swing.JLabel label_pintura;
     private javax.swing.JLabel label_products;
-    private javax.swing.JLabel label_sec;
+    public javax.swing.JLabel label_sec;
     private javax.swing.JLabel label_tiempo;
-    private javax.swing.JLabel label_total;
+    public javax.swing.JLabel label_total;
     private javax.swing.JLabel porcentaje1;
     private javax.swing.JLabel porcentaje2;
     private javax.swing.JLabel porcentaje3;
