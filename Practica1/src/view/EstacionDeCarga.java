@@ -1,6 +1,8 @@
 package view;
 
 import javax.swing.table.DefaultTableModel;
+import model.Actualizar_tabla;
+import model.Lista_Productos;
 
 /**
 
@@ -17,6 +19,11 @@ public class EstacionDeCarga extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setTitle("Estación de Carga");
         table_products();
+        
+                
+        Actualizar_tabla tabla = new Actualizar_tabla();
+        tabla.agregar_productos(dtm_product, Lista_Productos.productos);
+        
     }
     
     public void table_products(){

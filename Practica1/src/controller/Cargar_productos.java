@@ -45,7 +45,7 @@ public class Cargar_productos implements ActionListener{
             EstacionDeTrabajo trabajo = new EstacionDeTrabajo();
             EstacionDeResultados resultados = new EstacionDeResultados();
             
-            Producir_productos producir_control = new Producir_productos(producir, view, trabajo, resultados);
+            Producir_productos producir_control = new Producir_productos(producir, view, trabajo);
         }
     }
 }

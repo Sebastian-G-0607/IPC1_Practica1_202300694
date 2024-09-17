@@ -29,7 +29,7 @@ public class Producir extends javax.swing.JFrame {
         field_cod = new javax.swing.JTextField();
         field_cantidad = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         label_cod.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         label_cod.setText("Código:");

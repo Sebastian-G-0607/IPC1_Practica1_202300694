@@ -15,8 +15,6 @@ public class Hilos_serie extends Thread{
     
     private String material;
     private String color;
-//    private Hilo_barra hilo3;
-    
     
     int cantidadDeProductos;
     private EstacionDeTrabajo trabajo;
@@ -25,12 +23,12 @@ public class Hilos_serie extends Thread{
     public Hilos_serie(String material, String color, int cantidadDeProductos, EstacionDeTrabajo trabajo, EstacionDeResultados resultados){
         this.material = material;
         this.color = color;
-//        this.hilo3 = hilo3;
         this.cantidadDeProductos = cantidadDeProductos;
         this.trabajo = trabajo;
         this.resultados = resultados;
     }
     
+    @Override
     public void run(){
         int contador = 0;
         try {
@@ -73,8 +71,8 @@ public class Hilos_serie extends Thread{
         }
         try {
             Hilos_serie.sleep(5000);
-            this.trabajo.dispose();
             this.resultados.setVisible(true);
+            this.trabajo.dispose();
         } catch (InterruptedException ex) {
             JOptionPane.showMessageDialog(null, ex);
         }
