@@ -30,7 +30,7 @@ public class Cargar_productos implements ActionListener{
         if(e.getSource() == view.btn_load){
             Cargar_productosCSV csv = new Cargar_productosCSV();
             csv.elegir_archivo();
-            if(csv.getRuta() != null){
+            if(csv.getRuta() != null && csv.isBand() == true){
                 csv.Cargar_productos();
                 
                 Productos_binarios.escribir_productosBinario();

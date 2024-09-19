@@ -2,12 +2,8 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
 import model.Costo_producto;
-import model.Hilo_barra;
 import model.Hilo_contador;
 import model.Hilo_contadorProductos;
 import model.Hilos_serie;

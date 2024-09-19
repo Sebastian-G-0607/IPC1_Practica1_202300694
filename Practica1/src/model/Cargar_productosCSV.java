@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
 import java.io.BufferedReader;
@@ -21,11 +17,18 @@ public class Cargar_productosCSV {
     private boolean band = false;
     
     public void elegir_archivo(){
+        String extension;
         JFileChooser selArchivo = new JFileChooser("C:\\Users\\sebas\\OneDrive\\Escritorio");
         int val = selArchivo.showOpenDialog(null); //Se muestra la interfaz
         if(val != selArchivo.CANCEL_OPTION){ //Si el usuario no cerró el JFileChooser:
             ruta = selArchivo.getSelectedFile().getAbsolutePath(); //Se guarda la ruta del archivo que el usuario seleccionó
-            band = true; //Se cambia la bandera a true
+            if((extension = ruta.substring(ruta.lastIndexOf(".") + 1)).equals("csv")){
+                band = true; //Se cambia la bandera a true
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Tipo de archivo no válido");
+                band = false;
+            }
         } 
     }
     
@@ -80,6 +83,10 @@ public class Cargar_productosCSV {
 
     public String getRuta() {
         return ruta;
+    }
+
+    public boolean isBand() {
+        return band;
     }
     
     

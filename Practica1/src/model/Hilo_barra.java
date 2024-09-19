@@ -17,9 +17,6 @@ public class Hilo_barra extends Thread{
     private double progress;
     private JLabel label;
     
-    public Hilo_barra(){   
-        
-    }
     
     //Constructor para los hilos de material y color
     public Hilo_barra(JProgressBar barra, String descripcion, JLabel label){

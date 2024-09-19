@@ -1,7 +1,5 @@
 package model;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -11,7 +9,6 @@ import javax.swing.JOptionPane;
  */
 public class Hilo_contadorProductos extends Thread{
     
-    private boolean band = true;
     private int tiempo1;
     private int tiempo2;
     private int tiempo3;
