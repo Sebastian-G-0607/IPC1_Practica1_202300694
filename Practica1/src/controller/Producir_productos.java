@@ -87,11 +87,13 @@ public class Producir_productos implements ActionListener{
                         serie.start(); 
                         timer.start();
                         num_productos.start();
+                        
+                        String materialC = Lista_Productos.productos.get(index).getMaterial().toUpperCase().charAt(0) + Lista_Productos.productos.get(index).getMaterial().substring(1, Lista_Productos.productos.get(index).getMaterial().length()).toLowerCase();
 
                         resultados.getLabel_producto().setText(Lista_Productos.productos.get(index).getCodigo());
                         resultados.getLabel_nombre().setText(Lista_Productos.productos.get(index).getNombre());
                         resultados.getLabel_color().setText(Lista_Productos.productos.get(index).getColor());
-                        resultados.getLabel_material().setText(Lista_Productos.productos.get(index).getMaterial());
+                        resultados.getLabel_material().setText(materialC);
                         resultados.getLabel_cantidad().setText(String.valueOf(cantidad));
                         resultados.getLabel_costoT().setText("Q" + ((costo_material*tiempo_material) + (costo_color*tiempo_color) + (20))*cantidad + ".00");
                         resultados.getLabel_costoU().setText("Q" + ((costo_material*tiempo_material) + (costo_color*tiempo_color) + (20)) + ".00");
